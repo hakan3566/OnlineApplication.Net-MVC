@@ -1,0 +1,37 @@
+﻿@model OnlineApp.Models.Classes.SalesTransaction
+@{
+    ViewBag.Title = "NewSale";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>New Sales Page</h2>
+<br />
+
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.Product)
+    @Html.DropDownListFor(x => x.Productid, (List<SelectListItem>)ViewBag.val1, new
+        { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Current)
+    @Html.DropDownListFor(x => x.CurrentId, (List<SelectListItem>)ViewBag.val2, new
+        { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Employee)
+    @Html.DropDownListFor(x => x.EmployeeId, (List<SelectListItem>)ViewBag.val3, new
+        { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Number)
+    @Html.TextBoxFor(x => x.Number, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Price)
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.AggregateAmount)
+    @Html.TextBoxFor(x => x.AggregateAmount, new { @class = "form-control" })
+    <br />
+
+
+    <button class="btn btn-primary">Make a Sale</button>
+
+</form>

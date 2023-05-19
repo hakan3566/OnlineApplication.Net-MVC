@@ -1,0 +1,38 @@
+﻿@using OnlineApp.Models.Classes
+@model List<Employee>
+@{
+    ViewBag.Title = "DepartmentDetail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Department Detail PAGE</h2>
+<br />
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Department Name: @ViewBag.d</li>
+</ol>
+
+
+
+<table class="table table-hover">
+    <tr>
+        <th>EMPLOYEE ID</th>
+        <th>NAME</th>
+        <th>SURNAME</th>
+        <th>IMAGE</th>
+        <th>SALES</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.EmployeeId</td>
+            <td>@x.EmployeeName</td>
+            <td>@x.EmployeeSurname</td>
+            <td>@x.EmployeeImage</td>
+            <td><a href="/Department/DepartmentEmployeeSales/@x.EmployeeId" class="btn btn-default" style="background-color:limegreen">Sales</a></td>
+        </tr>
+    }
+
+
+</table>

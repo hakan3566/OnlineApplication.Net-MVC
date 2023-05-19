@@ -1,0 +1,41 @@
+﻿@using OnlineApp.Models.Classes
+@model List<InvoiceItem>
+@{
+    ViewBag.Title = "InvoiceDetail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br />
+<h2>Invoice Items Page</h2>
+<br />
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Invoice Number: @ViewBag.d </li>
+</ol>
+
+
+
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Explanation</th>
+        <th>Quantity</th>
+        <th>UnitPrice</th>
+        <th>Total</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.InvoiceItemId</td>
+            <td>@x.Explanation</td>
+            <td>@x.Quantity</td>
+            <td>@x.UnitPrice</td>
+            <td>@x.Total</td>            
+        </tr>
+    }
+
+
+</table>
+
+<a href="/Invoice/AddInvoiceitem" class="btn btn-default" style="background-color:darksalmon">Add New Invoice Item</a>
